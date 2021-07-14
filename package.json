@@ -1,0 +1,32 @@
+{
+  "name": "@njam-data/njam",
+  "version": "0.0.0",
+  "description": "A commandline tool for performing common development tasks on the NJAM data team.",
+  "type": "module",
+  "bin": {
+    "njam": "bin/index.js"
+  },
+  "scripts": {
+    "lint": "standard",
+    "lintfix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njam-data/njam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njam-data/njam/issues"
+  },
+  "homepage": "https://github.com/njam-data/njam#readme",
+  "dependencies": {
+    "@njam-data/tools": "^1.4.1",
+    "dedent": "^0.7.0",
+    "mri": "^1.1.6",
+    "slugify": "^1.5.3"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
