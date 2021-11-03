@@ -32,6 +32,7 @@ async function main () {
       help
 
       COMMANDS
+      njam lint --fix
       njam xlsx-to-csv -f input.xlsx -o path/to/directory/
     `
 
