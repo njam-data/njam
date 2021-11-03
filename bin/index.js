@@ -10,6 +10,8 @@ import slugify from 'slugify'
 import { parseXlsx } from '@njam-data/tools/xlsx.js'
 import { writeCsv } from '@njam-data/tools/csv.js'
 
+import lint from './commands/lint.js'
+
 const flags = mri(process.argv.slice(2), {
   alias: {
     help: 'h',
@@ -25,8 +27,6 @@ const args = flags._
 const cmd = args.shift()
 
 async function main () {
-  console.log('cmd', cmd)
-  console.log('flags', flags)
   if (cmd === 'help' || args.help) {
     const message = dedent`
       help
@@ -36,6 +36,11 @@ async function main () {
     `
 
     console.log(message)
+    process.exit()
+  }
+
+  if (cmd === 'lint') {
+    await lint({ args, flags })
     process.exit()
   }
 

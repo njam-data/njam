@@ -7,8 +7,8 @@
     "njam": "bin/index.js"
   },
   "scripts": {
-    "lint": "standard",
-    "lintfix": "standard --fix"
+    "lint": "./bin/index.js",
+    "lintfix": "./bin/index.js --fix"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,15 @@
   },
   "homepage": "https://github.com/njam-data/njam#readme",
   "dependencies": {
-    "@njam-data/tools": "^1.4.1",
+    "@njam-data/tools": "^2.5.0",
     "dedent": "^0.7.0",
-    "mri": "^1.1.6",
-    "slugify": "^1.5.3"
-  },
-  "devDependencies": {
-    "standard": "^16.0.3"
+    "eslint": "^8.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-svelte": "^1.1.2",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "mri": "^1.2.0",
+    "slugify": "^1.6.1",
+    "svelte": "^3.44.1"
   }
 }
