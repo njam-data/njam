@@ -7,8 +7,8 @@
     "njam": "bin/index.js"
   },
   "scripts": {
-    "lint": "./bin/index.js",
-    "lintfix": "./bin/index.js --fix"
+    "lint": "./bin/index.js lint",
+    "lintfix": "./bin/index.js lint --fix"
   },
   "repository": {
     "type": "git",
