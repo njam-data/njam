@@ -26,7 +26,6 @@
     "eslint": "^8.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-svelte": "^1.1.2",
     "eslint-plugin-svelte3": "^3.2.1",
     "mri": "^1.2.0",
     "slugify": "^1.6.1",
