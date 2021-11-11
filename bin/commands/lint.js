@@ -6,6 +6,7 @@ const projectRoot = dirname.join(import.meta.url, '..', '..')
 export default async function lint ({ args, flags }) {
 	const eslint = new ESLint({
 		fix: flags.fix,
+		extensions: ['.js', '.ts', '.cjs', '.mjs', '.svelte'],
 		resolvePluginsRelativeTo: projectRoot,
 		baseConfig: {
 			env: {
