@@ -220,9 +220,11 @@ export default async function lint ({ args, flags }) {
 				yoda: ['error', 'never'],
 
 				'import/export': 'error',
-				'import/first': 'error',
+				'import/first': 'off',
 				'import/no-absolute-path': ['error', { esmodule: true, commonjs: true, amd: false }],
-				'import/no-duplicates': 'error',
+				'import/no-duplicates': 'off',
+				'import/no-mutable-exports': 'off',
+				'import/no-unresolved': 'off',
 				'import/no-named-default': 'error',
 				'import/no-webpack-loader-syntax': 'error',
 
