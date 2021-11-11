@@ -1,6 +1,6 @@
 {
   "name": "@njam-data/njam",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "A commandline tool for performing common development tasks on the NJAM data team.",
   "type": "module",
   "bin": {
