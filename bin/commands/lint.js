@@ -4,6 +4,12 @@ import * as dirname from '@njam-data/tools/dirname.js'
 const projectRoot = dirname.join(import.meta.url, '..', '..')
 
 export default async function lint ({ args, flags }) {
+	let ignorePatterns = ['tmp/*', '.tmp/*']
+
+	if (flags.ignore && flags.ignore.length) {
+		ignorePatterns = [...ignorePatterns, ...flags.ignore]
+	}
+
 	const eslint = new ESLint({
 		fix: flags.fix,
 		extensions: ['.js', '.ts', '.cjs', '.mjs', '.svelte'],
@@ -23,6 +29,8 @@ export default async function lint ({ args, flags }) {
 				'node',
 				'svelte3'
 			],
+			extends: ['eslint:recommended'],
+			ignorePatterns,
 			globals: {
 				document: 'readonly',
 				navigator: 'readonly',
@@ -47,11 +55,7 @@ export default async function lint ({ args, flags }) {
 				'arrow-spacing': ['error', { before: true, after: true }],
 				'block-spacing': ['error', 'always'],
 				'brace-style': ['error', '1tbs', { allowSingleLine: true }],
-				camelcase: ['error', {
-					allow: ['^UNSAFE_'],
-					properties: 'never',
-					ignoreGlobals: true
-				}],
+				camelcase: ['off'],
 				'comma-dangle': ['error', {
 					arrays: 'never',
 					objects: 'never',
