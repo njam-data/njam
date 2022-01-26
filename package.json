@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/njam-data/njam#readme",
   "dependencies": {
-    "@njam-data/tools": "^2.5.0",
+    "@njam-data/tools": "^2.6.2",
     "dedent": "^0.7.0",
     "eslint": "^8.1.0",
     "eslint-plugin-import": "^2.25.2",

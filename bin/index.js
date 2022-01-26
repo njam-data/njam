@@ -11,12 +11,14 @@ import { parseXlsx } from '@njam-data/tools/xlsx.js'
 import { writeCsv } from '@njam-data/tools/csv.js'
 
 import lint from './commands/lint.js'
+import convert from './commands/convert.js'
 
 const flags = mri(process.argv.slice(2), {
 	alias: {
 		help: 'h',
 		filepath: 'f',
-		outputDirectory: 'o'
+		inputFilepath: ['i', 'input', 'input-filepath', 'inputDirectory'],
+		outputFilepath: ['o', 'output', 'output-filepath', 'outputDirectory']
 	},
 	default: {
 
@@ -45,6 +47,11 @@ async function main () {
 		process.exit()
 	}
 
+	if (cmd === 'convert') {
+		await convert({ args, flags })
+		process.exit()
+	}
+
 	if (cmd === 'xlsx-to-csv') {
 		const buffer = await fs.readFile(flags.filepath)
 		const sheets = await parseXlsx(buffer)
@@ -57,12 +64,12 @@ async function main () {
 
 		if (sheets.length === 1) {
 			const outputFilename = parsedFilepath.name + '.csv'
-			const outputFilepath = path.join(process.cwd(), flags.outputDirectory, outputFilename)
+			const outputFilepath = path.join(process.cwd(), flags.outputFilepath, outputFilename)
 			await writeCsv(outputFilepath, sheets[0].data, { headers: true })
 		} else {
 			for (const sheet of sheets) {
 				const outputFilename = parsedFilepath.name + `${slugify(sheet.name.toLowerCase())}.csv`
-				const outputFilepath = path.join(process.cwd(), flags.outputDirectory, outputFilename)
+				const outputFilepath = path.join(process.cwd(), flags.outputFilepath, outputFilename)
 				await writeCsv(outputFilepath, sheet.data, { headers: true })
 			}
 		}
