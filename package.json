@@ -23,12 +23,12 @@
   "dependencies": {
     "@njam-data/tools": "^2.6.2",
     "dedent": "^0.7.0",
-    "eslint": "^8.1.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint": "^8.7.0",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-svelte3": "^3.2.1",
+    "eslint-plugin-svelte3": "^3.4.0",
     "mri": "^1.2.0",
-    "slugify": "^1.6.1",
-    "svelte": "^3.44.1"
+    "slugify": "^1.6.5",
+    "svelte": "^3.46.3"
   }
 }
